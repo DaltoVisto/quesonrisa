@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultorio Médico - Reservar Turnos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Consultorio Médico</h1>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#reservar">Reservar Turno</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="inicio" class="hero">
+        <h2>Bienvenido a Nuestro Consultorio</h2>
+        <p>Ofrecemos atención médica de calidad con profesionales experimentados.</p>
+    </section>
+    <section id="nosotros">
+        <h2>Sobre Nosotros</h2>
+        <p>Somos un consultorio dedicado a brindar servicios médicos integrales. Nuestro equipo de médicos especializados está comprometido con su salud y bienestar.</p>
+    </section>
+    <section id="servicios">
+        <h2>Servicios</h2>
+        <ul>
+            <li>Medicina General</li>
+            <li>Pediatría</li>
+            <li>Ginecología</li>
+            <li>Cardiología</li>
+            <li>Dermatología</li>
+        </ul>
+    </section>
+    <section id="reservar">
+        <h2>Reservar Turno</h2>
+        <p>Complete el formulario para reservar su turno médico.</p>
+        <form id="appointmentForm">
+            <label for="name">Nombre Completo:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Teléfono:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="date">Fecha del Turno:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Hora del Turno:</label>
+            <select id="time" name="time" required>
+                <option value="">Seleccione una hora</option>
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+            </select>
+
+            <label for="doctor">Médico:</label>
+            <select id="doctor" name="doctor" required>
+                <option value="">Seleccione un médico</option>
+                <option value="Dr. García">Dr. García</option>
+                <option value="Dra. López">Dra. López</option>
+                <option value="Dr. Martínez">Dr. Martínez</option>
+            </select>
+
+            <label for="reason">Motivo de la Consulta:</label>
+            <textarea id="reason" name="reason" rows="4" required></textarea>
+
+            <button type="submit">Reservar Turno</button>
+        </form>
+        <div id="confirmation" style="display: none;">
+            <h2>Turno Reservado Exitosamente</h2>
+            <p>Gracias por reservar su turno. Recibirá una confirmación por correo electrónico.</p>
+        </div>
+    </section>
+    <section id="turnosDisponibles">
+        <h2>Turnos Disponibles</h2>
+        <p>A continuación figuran los turnos libres para los próximos días. Los turnos ya reservados se excluyen automáticamente.</p>
+        <ul id="availableSlotsList"></ul>
+    </section>
+    <section id="misTurnos">
+        <h2>Turnos Reservados</h2>
+        <div id="bookedAppointments">
+            <p>No hay turnos reservados aún.</p>
+        </div>
+    </section>
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Dirección: Calle Ficticia 123, Ciudad</p>
+        <p>Teléfono: (123) 456-7890</p>
+        <p>Email: info@consultorio.com</p>
+    </section>
+    <footer>
+        <p>&copy; 2026 Consultorio Médico. Todos los derechos reservados.</p>
+    </footer>
+    <script src="app-0.js"></script>
+</body>
+</html>
