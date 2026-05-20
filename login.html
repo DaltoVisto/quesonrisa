@@ -1,0 +1,73 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Consultorio Médico</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="auth-container">
+
+        <div class="auth-card">
+
+            <div class="logo-area">
+                <h1>Consultorio Médico</h1>
+                <p>Acceda a su cuenta</p>
+            </div>
+
+            <div class="tabs">
+                <button class="tab active" onclick="showLogin()">Iniciar Sesión</button>
+                <button class="tab" onclick="showRegister()">Registrarse</button>
+            </div>
+
+            <!-- LOGIN -->
+            <form id="loginForm" class="form-section">
+
+                <label>Tipo de cuenta</label>
+                <select id="loginType">
+                    <option value="user">Paciente</option>
+                    <option value="admin">Administrador</option>
+                </select>
+
+                <label>Correo electrónico</label>
+                <input type="email" id="loginEmail" placeholder="Ingrese su email" required>
+
+                <label>Contraseña</label>
+                <input type="password" id="loginPassword" placeholder="Ingrese su contraseña" required>
+
+                <button type="submit">Ingresar</button>
+
+            </form>
+
+            <!-- REGISTER -->
+            <form id="registerForm" class="form-section hidden">
+
+                <label>Nombre completo</label>
+                <input type="text" id="registerName" placeholder="Nombre completo" required>
+
+                <label>Correo electrónico</label>
+                <input type="email" id="registerEmail" placeholder="Correo electrónico" required>
+
+                <label>Teléfono</label>
+                <input type="tel" id="registerPhone" placeholder="Teléfono" required>
+
+                <label>Contraseña</label>
+                <input type="password" id="registerPassword" placeholder="Contraseña" required>
+
+                <button type="submit">Crear Cuenta</button>
+
+            </form>
+
+            <div id="messageBox"></div>
+
+        </div>
+
+    </div>
+
+    <script src="login.js"></script>
+
+</body>
+</html>
