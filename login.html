@@ -1,73 +1,105 @@
-<!-- login.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Consultorio Médico</title>
-    <link rel="stylesheet" href="login.css">
-</head>
-<body>
-
-    <div class="auth-container">
-
-        <div class="auth-card">
-
-            <div class="logo-area">
-                <h1>Consultorio Médico</h1>
-                <p>Acceda a su cuenta</p>
-            </div>
-
-            <div class="tabs">
-                <button class="tab active" onclick="showLogin()">Iniciar Sesión</button>
-                <button class="tab" onclick="showRegister()">Registrarse</button>
-            </div>
-
-            <!-- LOGIN -->
-            <form id="loginForm" class="form-section">
-
-                <label>Tipo de cuenta</label>
-                <select id="loginType">
-                    <option value="user">Paciente</option>
-                    <option value="admin">Administrador</option>
-                </select>
-
-                <label>Correo electrónico</label>
-                <input type="email" id="loginEmail" placeholder="Ingrese su email" required>
-
-                <label>Contraseña</label>
-                <input type="password" id="loginPassword" placeholder="Ingrese su contraseña" required>
-
-                <button type="submit">Ingresar</button>
-
-            </form>
-
-            <!-- REGISTER -->
-            <form id="registerForm" class="form-section hidden">
-
-                <label>Nombre completo</label>
-                <input type="text" id="registerName" placeholder="Nombre completo" required>
-
-                <label>Correo electrónico</label>
-                <input type="email" id="registerEmail" placeholder="Correo electrónico" required>
-
-                <label>Teléfono</label>
-                <input type="tel" id="registerPhone" placeholder="Teléfono" required>
-
-                <label>Contraseña</label>
-                <input type="password" id="registerPassword" placeholder="Contraseña" required>
-
-                <button type="submit">Crear Cuenta</button>
-
-            </form>
-
-            <div id="messageBox"></div>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión - Qué Sonrisa</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">Qué Sonrisa ✨</a>
+      <nav>
+        <a href="index.html">Volver al Inicio</a>
+      </nav>
+    </header>
+    <h3 id="tlogin">Iniciar Sesión-Registrarse</h3>
+    <section class="auth-section">
+      <div class="auth-container">
+        <div class="auth-tabs">
+          <button class="tab active" onclick="showLogin()">Ingresar</button>
+          <button class="tab" onclick="showRegister()">Registrarse</button>
         </div>
 
-    </div>
+        <div id="messageBox" class="hidden"></div>
 
-    <script src="login.js"></script>
+        <!-- Formulario Login -->
+        <form id="loginForm" class="auth-form">
+          <input type="hidden" id="loginType" value="user" />
+          <div class="form-group">
+            <label for="loginEmail">Correo Electrónico</label>
+            <input
+              type="email"
+              id="loginEmail"
+              required
+              placeholder="ejemplo@correo.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Contraseña</label>
+            <input
+              type="password"
+              id="loginPassword"
+              required
+              placeholder="••••••••"
+            />
+          </div>
+          <button type="submit" class="btn-submit">Iniciar Sesión</button>
+        </form>
 
-</body>
+        <!-- Formulario Registro -->
+        <form id="registerForm" class="auth-form hidden">
+          <div class="form-group">
+            <label for="registerName">Nombre Completo</label>
+            <input
+              type="text"
+              id="registerName"
+              required
+              placeholder="Juan Pérez"
+            />
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">Correo Electrónico</label>
+            <input
+              type="email"
+              id="registerEmail"
+              required
+              placeholder="juan@correo.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="registerPhone">Teléfono / Celular</label>
+            <input
+              type="tel"
+              id="registerPhone"
+              required
+              placeholder="11 2345 6789"
+            />
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Contraseña</label>
+            <input
+              type="password"
+              id="registerPassword"
+              required
+              placeholder="Mínimo 6 caracteres"
+            />
+          </div>
+          <button type="submit" class="btn-submit">Crear Cuenta</button>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <p>
+        &copy; 2026 Qué Sonrisa - Consultorio Odontológico. Todos los derechos
+        reservados.
+      </p>
+    </footer>
+    <!-- Vinculá acá tu script original del Login -->
+    <script type="module" src="login.js"></script>
+  </body>
 </html>

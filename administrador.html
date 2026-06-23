@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de Administración - Qué Sonrisa</title>
+    <link rel="stylesheet" href="adm.css" />
+    <link rel="stylesheet" href="estilos.css">
+  </head>
+<body>
+  <header>
+    
+        <a href="#" class="logo">Qué Sonrisa ✨</a>
+        <nav>
+            <span class="user-nav">Panel administrador</span>
+            <a href="index.html" class="btn-logout" onclick="localStorage.clear()">Cerrar Sesión</a>
+        </nav>
+    
+  </header>
+  
+  <main>
+    <h2>Bienvenido al Panel de Administración</h2>
+    <p>Desde aquí puedes gestionar los turnos y la información de los pacientes.</p>
+    
+    <!-- ACÁ VAN A ENTRAR LAS CARDS -->
+    <div id="contenedor-turnos" class="grid-turnos"></div>
+  </main>
+
+  <footer>
+    <p>© 2026 Qué Sonrisa - Consultorio Odontológico. Todos los derechos reservados.</p>
+  </footer>
+  <script type="module" src="administrador.js"></script>
+</body>
+</html>

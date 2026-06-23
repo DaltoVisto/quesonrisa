@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Panel - Qué Sonrisa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Qué Sonrisa ✨</a>
+        <nav>
+            <span class="user-nav">Panel Paciente</span>
+            <a href="index.html" class="btn-logout" onclick="localStorage.clear()">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <section class="booking-section">
+        <div class="turno-container">
+            <h2>Reserva tu Turno en Línea</h2>
+            <p>Elegí el día y horario disponible para tu consulta odontológica.</p>
+            
+            <form id="form-turno">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fecha">Día de atención</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                        <small class="form-help">Atendemos: Martes y Jueves</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hora">Horarios disponibles</label>
+                        <select id="hora" name="hora" required disabled>
+                            <option value="" disabled selected>Elige un día primero</option>
+                        </select>
+                        <small class="form-help">Horario: 09:00 a 16:00 hs</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="motivo">Motivo de la consulta (Opcional)</label>
+                    <textarea id="motivo" name="motivo" rows="3" placeholder="Ej: Dolor en una muela, limpieza anual, revisión..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Confirmar Mi Turno</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Qué Sonrisa - Consultorio Odontológico. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Vinculá acá tu script de turnos que lee el localStorage -->
+    <script type="module" src="panel.js"></script>
+</body>
+</html>
