@@ -7,19 +7,11 @@ import {
   query,
   where,
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
-
+import { firebaseConfig } from "./firebase-config.js"; // Importamos la configuración de Firebase
 // ==========================================
 // 1. CONFIGURACIÓN E INICIALIZACIÓN DE FIREBASE
 // ==========================================
-const firebaseConfig = {
-  apiKey: "AIzaSyC2lhun7fPQmAdsY8FoSegi89D8jy83Oeg",
-  authDomain: "quesonrisa-2de8f.firebaseapp.com",
-  projectId: "quesonrisa-2de8f",
-  storageBucket: "quesonrisa-2de8f.firebasestorage.app",
-  messagingSenderId: "944850520581",
-  appId: "1:944850520581:web:7b0f8da836f83b8b2bea6c",
-  measurementId: "G-CD6VP2L9E8",
-};
+
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -117,7 +109,7 @@ if (registerForm) {
 
     try {
       // Verificamos primero si el email ya existe para no duplicarlo
-      const q = query(collection(db, "usuarios"), where("email", "==", email));
+      const q = query(collection(db, "users"), where("email", "==", email));
       const querySnapshot = await getDocs(q);
 
       if (!querySnapshot.empty) {
@@ -131,11 +123,11 @@ if (registerForm) {
         email: email,
         telefono: telefono,
         password: password, // Almacenamiento básico
-        rol: "paciente", // Todos los registrados web arrancan como pacientes
+        role: "paciente", // Todos los registrados web arrancan como pacientes
         creadoEl: new Date(),
       };
 
-      await addDoc(collection(db, "usuarios"), nuevoUsuario);
+      await addDoc(collection(db, "users"), nuevoUsuario);
       mostrarMensaje("¡Cuenta creada con éxito! Ya podés ingresar.", "success");
 
       registerForm.reset();
