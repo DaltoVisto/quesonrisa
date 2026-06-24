@@ -79,10 +79,30 @@ p {
 .card-turno p {
     margin: 6px 0;
     color: var(--text);
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 .card-turno p strong {
     color: var(--primary);
+}
+
+.btn-delete {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 12px;
+    background: #ef4444;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-delete:hover {
+    background: #dc2626;
+    transform: translateY(-1px);
 }
 
 .fecha-turno {

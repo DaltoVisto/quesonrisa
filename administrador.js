@@ -2,6 +2,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebas
 import {
   getFirestore,
   collection,
+  doc,
+  deleteDoc,
   onSnapshot,
   query,
   orderBy
@@ -13,6 +15,20 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const contenedor = document.getElementById("contenedor-turnos");
+
+async function eliminarTurno(turnoId) {
+  const confirmar = confirm("¿Estás seguro de que querés eliminar este turno?");
+  if (!confirmar) return;
+
+  try {
+    const turnoRef = doc(db, "turnos", turnoId);
+    await deleteDoc(turnoRef);
+    alert("Turno eliminado correctamente.");
+  } catch (error) {
+    console.error("Error al eliminar el turno: ", error);
+    alert("No se pudo eliminar el turno. Intenta nuevamente.");
+  }
+}
 
 function mostrarTurnos() {
   const q = query(collection(db, "turnos"), orderBy("fecha", "asc"));
@@ -40,6 +56,13 @@ function mostrarTurnos() {
         <p class="fecha-turno">📅 ${fechaTexto} - ⏰ ${turno.hora || "Sin hora"} hs</p>
       `;
 
+      const deleteButton = document.createElement("button");
+      deleteButton.type = "button";
+      deleteButton.classList.add("btn-delete");
+      deleteButton.textContent = "Eliminar turno";
+      deleteButton.addEventListener("click", () => eliminarTurno(docTurno.id));
+
+      card.appendChild(deleteButton);
       contenedor.appendChild(card);
     });
   });
