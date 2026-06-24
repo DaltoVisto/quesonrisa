@@ -7,7 +7,7 @@ import {
   query,
   where,
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
-import { firebaseConfig } from "./firebase-config.js"; // Importamos la configuración de Firebase
+import { firebaseConfig } from "firebase-config.js"; // Importamos la configuración de Firebase
 // ==========================================
 // 1. CONFIGURACIÓN E INICIALIZACIÓN DE FIREBASE
 // ==========================================
